@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <title>Dropdown</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body> -->
+<!-- <select name= sports method="GET" action="/">
+    {% for sport in sports %}
+    <option value= "{{sport}}" SELECTED>{{sport}}</option>
+    {% endfor %}
+</select> -->
+<br>
+<!-- <select name= location method="GET" action="/">
+    {% for location in locations %}
+    <option value= "{{location}}" SELECTED>{{location}}</option>
+    {% endfor %} -->
+<!-- </select>
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      Sports
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    {% for sport in sports %}
+      <li><a class="dropdown-item" href="#">{{sport}}</a></li>
+      <! <li><a class="dropdown-item" href="#">Baseball</a></li> -->
+    <!-- {% endfor %} -->
+    
+    </ul>
+  <!-- </div>
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+      Location
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+    {% for location in locations %}
+      <li><a class="dropdown-item" href="#">{{location}}</a></li> -->
+      <!-- <li><a class="dropdown-item" href="#">Baseball</a></li> -->
+    <!-- {% endfor %} --> 
+    
+    <!-- </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+ <html>
+<head>
+<body style="background-color: greenyellow;">
+    <h1 style="font-size:60px;">Dog Days of Sports</h1></title>     
+</head>
+ <body>
+
+<p>Please make your selections</p>
+<form id="form1" action="/" method="POST" enctype="multipart/form-data">
+<select id="mySelect" name = "sports">
+  <option value=""></option>
+  <option value="MLB">Baseball</option>
+  <option value="NBA">Basketball</option>
+  <option value="NFL">Football</option>
+  <option value="NHL">Hockey</option>
+</select>
+<select id="mySelect2" name = "location">
+    <option value=""></option>
+    <option value="Philadelphia">Philadelphia</option>
+    <option value="Tampa">Tampa</option>
+    <option value="Atlanta">Atlanta</option>
+    <option value="Los Angeles">Los Angeles</option>
+    <option value="Boston">Boston</option>
+    <option value="New York">New York</option>
+    <option value="Miami">Miami</option>
+    <option value="Seattle">Seattle</option>
+    <option value="Portland">Portland</option>
+    <option value="Memphis">Memphis</option>
+    <option value="New Orleans">New Orleans</option>
+    <option value="Chicago">Chicago</option>
+    <option value="Milwaukee">Milwaukee</option>
+    <option value="Minnesota">Minnesota</option>
+    <option value="San Francisco">San Francisco</option>
+    <option value="Sacramento">Sacramento</option>
+    <option value="Detroit">Detroit</option>
+    <option value="Brooklyn">Brooklyn</option>
+    <option value="Phoenix">Phoenix</option>
+    <option value="Arizona">Arizona</option>
+    <option value="Kansas City">Kansas City</option>
+    <option value="Arlington">Arlington</option>
+    <option value="San Diego">San Diego</option>
+    <option value="Cincinnati">Cincinnati</option>
+    <option value="Charlotte">Charlotte</option>
+    <option value="Bronx">Bronx</option>
+    <option value="Montreal">Montreal</option>
+    <option value="Jacksonville">Jacksonville</option>
+    <option value="Houston">Houston</option>
+    <option value="Inglewood">Inglewood</option>
+    <option value="Santa Clara">Santa Clara</option>
+    <option value="Foxborough">Foxborough</option>
+    <option value="East Rutherford">East Rutherford</option>
+    <option value="San Antonio">San Antonio</option>
+    <option value="Dallas">Dallas</option>
+    <option value="Green Bay">Green Bay</option>
+    <option value="Orchard Park">Orchard Park</option>
+    <option value="Ottowa">Ottowa</option>
+    <option value="Montreal">Montreal</option>
+    <option value="London">London</option>
+    <option value="East Rutherford">East Rutherford</option>
+    <option value="Baltimore">Baltimore</option>
+    <option value="Washington">Washington</option>
+    <option value="Glendale">Glendale</option>
+    <option value="Toronto">Toronto</option>
+    <option value="Vancouver">Vancouver</option>
+    <option value="Winnipeg">Winnipeg</option>
+    <option value="Edmonton">Edmonton</option>
+    <option value="Calgary">Calgary</option>
+    <option value="Pittsburgh">Pittsburgh</option>
+    <option value="Denver">Denver</option>
+    <option value="Salt Lake City">Salt Lake City</option>
+    <option value="Oklahoma City">Oklahoma City</option>
+    <option value="Orlando">Orlando</option>
+    <option value="Cleveland">Cleveland</option>
+    <option value="Indianapolis">Indianapolis</option>
+  </select>
+  <input type="text" id="mySelect3" name= "date" size="40" placeholder="Enter date as yyyy-mm-dd">
+  
+<input type="submit" value="Submit">
+</form>
+<p>Here is a list of Sporting events in your area.</p>
+<div id="result">
+ 
+      You have selected: 
+      {% if sports %}
+  <h1> {{ sports }}!</h1>
+      {% endif %}
+      {% if location %}
+  <h1> {{ location }}!</h1>
+      {% endif %}
+      {% for item in results %}
+    <table>  
+    <tr>
+        <td>{{item [0]}}</td> 
+        <td>{{item [1]}}</td> 
+        <td>{{item [2]}}</td> 
+        <td>{{item [3]}} VS</td> 
+        <td>{{item [4]}}</td> 
+        <td>{{item [5]}}</td> 
+        <td>{{item [6]}}</td> 
+    </tr>
+    </table>
+      {% endfor %}  
+
+</div>
+</body>
+</html>

@@ -1,73 +1,41 @@
 # DataZCW-Final-Project
 capstone project for ZCW Data's course.
 
-## Final Group Project Possibles
+Dog Days of the Year
 
-- How To Build a Neural Network to Recognize Handwritten Digits with TensorFlow
-  - ye olde scanning chestnut
-  - handwriting recognition
-- Image Processing for Feature Identification
-  - "Hot dog or not" but for X
-- Sentiment Analysis
-  - From twitter feeds
-  - From facebook feeds
-  - Or?
-  - provides realtime view of crowdsourced "zeitgeist" on a hot topic
-- Recommendation Engine
-  - Music, Books, Wine, TV/Movies, Sports
-  - if you like X, you'll like Y
-- Search Engine of Documents, DataSets, APIs?? (Map/reduce)
-  - Google lite
-  - Google images
-  - popularity or relevance measures
 
-## Group Size
+Problem:
 
-Each group should 2-4 people. Effort should be mostly
-Data Engineering, but at the end, do some actual Data Science (some machine learning?).
-So a model, or prediction, or something based on the data that
-has flowed through the project.
+-	Once a sports season is over (especially the dog days of the summer) people struggle to find content on their favorite sport
+-	This will give people a way to check on diffrenet sports and their upcoming schedule.  it will allow them to search for sporting events while out of town and a chance to check in on a new sport.
 
-EACH person must have a clear understanding of everything in the project.
-Each person should have parts they alone have done, something they've explained to their teammates.
 
-Each team must have single repo, (with NO creds stored anywhere), use the Github tools
-for obvious tracking purposes:
-- Lots of commits on several branches
-- Use of the Issues tab for tracking things being worked on
-- Use a project board to handle group comms on task assignments
+Methods/Collect:
 
-_We need this project to be clean and cool and clear about what you can do. Your hiring managers
-will want to look through it and then be prepped to ask you questions about almost anything within
-the project. You should be able to answer those questions._
 
-## Required stages
+-	Scrape sports api sites for season schedules and fan friendly events
+  - Api used https://sportradar.us/ - (Sportradar)
+  -Scraped MLB,NHL,NFL,NBA
+- Postman
 
-- Identify Scope of Project
-  - Find APIs that could help
-  - Find DataSets that might be useful
-- ProjectReadme.md file that gives a good high-level description of project.
-- Each project should have
-  - 2 or more piplines that collect data from sources
-    - Extra bonus for "streaming api" usage
-  - A cache sql/nosql database that acts as a data lake
-  - A series of Spark drivers that wrangle the data into a final form
-  - Final data stored back in the cache database
-  - A Data Viz and/or Dashbord showing the analysis done (of the data flows)
-- A Model which makes some prediction based on the data
-  - a ad-hoc prediction request
-  - or other insight into the data
-- Some documentation in the project's README (along with some PNGs of the results)
-- Make it pretty.
-- Add a "slide deck" of project work, overall structure, and status of milestones.
-  
-  ## Tech choices
-  
-  All tech choices will be approved by instructors. 
-  Any tech we've studied is fair game for use.
-  All project should have some **Spark** portion AND/OR some **Airflow** portion somewhere within the project.
-  All projects must have some python scripts, SQL/NoSQL database, and make use of some data visualization outputs and
-  kind of dashboard. (You may use any dashboard tech that is cleared with instrutors).
-  
-  
-  
+Clean:
+
+-	Creat a dataframe to clean api's and insert into a Dag for Airflow 
+-	Create a Database using Python and SQL to show cleaned up data using columns and rows for an applicaion 
+
+Data Pipeline:
+
+-	Scrape viewing platforms for all sports 
+-	Collect schedules for all major sports
+-	Filter out all irrelevant information
+-	Store it into a dataframe
+-	Get engine working to filter out data producing any changes in schedules and why 
+
+Create visualization:
+- Pie Chart of each sport showing how many months its regular season lasts and at what percentage
+- Line Chart comparing sports peak months against each other
+
+
+ 
+Recommendation Engine:
+- Get engine working to filter out data producing recommendations based off sports preferences along with location, and possibly favorite team
